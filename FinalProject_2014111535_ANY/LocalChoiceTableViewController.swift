@@ -174,6 +174,7 @@ class LocalChoiceTableViewController: UITableViewController {
                 if let selectedIndex = self.tableView.indexPathsForSelectedRows?.first?.row {
                     
                     gotoVC.detailList = localList[selectedIndex]
+               
                     
                 }
                 

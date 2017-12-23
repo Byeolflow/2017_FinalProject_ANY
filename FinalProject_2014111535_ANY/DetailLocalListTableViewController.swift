@@ -14,7 +14,6 @@ class DetailLocalListTableViewController: UITableViewController {
    // @IBOutlet var detailTitle: UITableViewCell!
     
     var detailList: NSManagedObject?
-    //var bigLocalList: [NSManagedObject] = []
     var detailLocalList: [NSManagedObject] = []
     
 
@@ -22,7 +21,6 @@ class DetailLocalListTableViewController: UITableViewController {
     func getContext()->NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.persistentContainer.viewContext
-        //return appDelegate.persistentContainer.viewContext
     }
     
     //View가 보여질 때 자료를 DB에서 가져오도록 한다.
@@ -31,9 +29,9 @@ class DetailLocalListTableViewController: UITableViewController {
         
         let context = getContext()
         
+        
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "LocalDetails")
 
-    //   let fetchRequest2 = NSFetchRequest<NSManagedObject>(entityName: "Locals")
         
         //정렬
         let sortDescriptor = NSSortDescriptor (key: "saveDate", ascending: true)
@@ -113,11 +111,7 @@ class DetailLocalListTableViewController: UITableViewController {
             let displayDate = formatter.string(from: unwrapDate as! Date)
             cell.detailTextLabel?.text = displayDate
         }
-        /*
-        if let dateTime = detailLocal.value(forKey: "saveDate") as? String {
-            cell.detailTextLabel?.text = dateTime
-        }
-        */
+
         
         /*
         detailName
@@ -196,6 +190,8 @@ class DetailLocalListTableViewController: UITableViewController {
                 }
             }
         }
+               
+        
         
     }
     

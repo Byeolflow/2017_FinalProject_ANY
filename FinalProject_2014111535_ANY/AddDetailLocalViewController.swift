@@ -17,7 +17,7 @@ class AddDetailLocalViewController: UIViewController, UITextFieldDelegate, UITex
     @IBOutlet var longitude: UILabel!
     @IBOutlet var textMemo: UITextView!
     @IBOutlet var confrimBtn: UIButton!
-    
+
     let locationManager: CLLocationManager = CLLocationManager()
 //    var toMapVC: UIViewController? = nil
 
@@ -41,17 +41,14 @@ class AddDetailLocalViewController: UIViewController, UITextFieldDelegate, UITex
         let context = getContext()
         let entity = NSEntityDescription.entity(forEntityName: "LocalDetails", in: context)
         
-        
-        
         //추가 끝
         //local recored를 새로 생성
-        let object = NSManagedObject(entity: entity!, insertInto: context)
+       let object = NSManagedObject(entity: entity!, insertInto: context)
         
         object.setValue(textDetailAddress.text, forKey: "detailName")
         object.setValue(textMemo.text, forKey: "memo")
         object.setValue(Date(), forKey: "saveDate")
-      //  object.setValue(latitude.text, forKey: "latitude")
-      //  object.setValue(longitude.text, forKey: "longitude")
+ 
 
         
         //기본값 설정.
@@ -59,12 +56,14 @@ class AddDetailLocalViewController: UIViewController, UITextFieldDelegate, UITex
             latitude.text = "37.628375"
             longitude.text = "127.090718"
         }
+            
         
         object.setValue(latitude.text, forKey: "latitude")
         object.setValue(longitude.text, forKey: "longitude")
         
+           
  
-        
+    
         
                 
         
