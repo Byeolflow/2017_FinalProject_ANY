@@ -149,6 +149,7 @@ class DetailLocalListTableViewController: UITableViewController {
             //Core Data 내의 해당 자료 삭제
             let context = getContext()
             context.delete(detailLocalList[indexPath.row])
+            
             do{
                 try context.save()
                 print("deleted!")

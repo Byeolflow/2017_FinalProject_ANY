@@ -14,6 +14,7 @@ class LocalChoiceTableViewController: UITableViewController {
     var localNumber: Int = 0
     
     var localList: [NSManagedObject] = []
+    var realdetailLocalList: [NSManagedObject] = []
     
     func getContext()->NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -27,6 +28,9 @@ class LocalChoiceTableViewController: UITableViewController {
         let context = self.getContext()
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Locals")
         
+        let fetchRequest2 = NSFetchRequest<NSManagedObject>(entityName: "LocalDetails")
+       
+        
         //정렬
        // let sortDescriptor = NSSortDescriptor (key: "localName", ascending: true)
         let sortDescriptor = NSSortDescriptor (key: "sortDate", ascending: true)
@@ -35,6 +39,7 @@ class LocalChoiceTableViewController: UITableViewController {
         
         do{
             localList = try context.fetch(fetchRequest)
+            self.realdetailLocalList = try context.fetch(fetchRequest2)
             
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
@@ -112,8 +117,12 @@ class LocalChoiceTableViewController: UITableViewController {
             
             //Core Data 내의 해당 자료 삭제
             let context = getContext()
-            context.delete(localList[indexPath.row])
+
             
+            context.delete(localList[indexPath.row])
+            for i in 0..<realdetailLocalList.count{
+                context.delete(realdetailLocalList[i])
+            }
             do{
                 try context.save()
                 print("deleted!")
