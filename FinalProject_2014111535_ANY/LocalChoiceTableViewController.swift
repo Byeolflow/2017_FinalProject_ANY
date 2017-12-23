@@ -153,26 +153,24 @@ class LocalChoiceTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if let destVC = segue.destination as? AddLocalViewController{
-            destVC.localVC = self
+        if segue.identifier == "toAddList"{
+            if let destVC = segue.destination as? AddLocalViewController{
+                destVC.localVC = self
+            }
         }
-        
-        
-        
-        
-        if let gotoVC = segue.destination as? DetailLocalListTableViewController{
             
-            if let selectedIndex = self.tableView.indexPathsForSelectedRows?.first?.row {
-      
-                gotoVC.detailList = localList[selectedIndex]
-        //        gotoVC.navigationItem.title = localList[selectedIndex].value(forKey: "localName")
+        else if segue.identifier == "toDetailView"{
+            if let gotoVC = segue.destination as? DetailLocalListTableViewController{
+                
+                if let selectedIndex = self.tableView.indexPathsForSelectedRows?.first?.row {
+                    
+                    gotoVC.detailList = localList[selectedIndex]
+                    
+                }
                 
             }
             
         }
- 
-        
- 
         
         
     }

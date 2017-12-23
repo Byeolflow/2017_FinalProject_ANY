@@ -150,11 +150,11 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qdB-Yg-e6W">
-                                <rect key="frame" x="43" y="226" width="219" height="205"/>
+                                <rect key="frame" x="43" y="226" width="249" height="205"/>
                                 <color key="backgroundColor" red="0.80191175250000002" green="0.98548370600000001" blue="0.52518322969999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="HTy-NL-Shc"/>
-                                    <constraint firstAttribute="width" constant="219" id="y7C-NV-VS3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="y7C-NV-VS3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -201,7 +201,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqv-RI-Q41">
-                                <rect key="frame" x="279" y="226" width="60" height="205"/>
+                                <rect key="frame" x="309" y="226" width="30" height="205"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="확인">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -234,6 +234,7 @@
                             <constraint firstItem="nxK-rp-qer" firstAttribute="leading" secondItem="6Ro-fK-E1K" secondAttribute="trailing" constant="20" id="27K-as-eP9"/>
                             <constraint firstItem="Xu4-Mc-THb" firstAttribute="centerX" secondItem="nxK-rp-qer" secondAttribute="centerX" id="3JF-7O-7bj"/>
                             <constraint firstItem="Xu4-Mc-THb" firstAttribute="top" secondItem="nxK-rp-qer" secondAttribute="bottom" constant="21" id="5YQ-OC-XuM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f0b-6b-kLR" secondAttribute="trailing" constant="15" id="7Dq-TC-rNe"/>
                             <constraint firstItem="wFW-HK-iDL" firstAttribute="height" secondItem="6Ro-fK-E1K" secondAttribute="height" id="8Il-qb-IVp"/>
                             <constraint firstItem="nxK-rp-qer" firstAttribute="trailing" secondItem="Xu4-Mc-THb" secondAttribute="trailing" id="8rE-v5-vqf"/>
                             <constraint firstItem="dT0-pt-zJT" firstAttribute="top" secondItem="awa-R1-D6h" secondAttribute="bottom" constant="50" id="Cfb-0Y-KnA"/>

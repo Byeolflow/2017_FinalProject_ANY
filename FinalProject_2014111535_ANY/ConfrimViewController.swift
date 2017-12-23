@@ -43,14 +43,16 @@ class ConfrimViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if let destination = segue.destination as? ConfirmMapViewController {
-            //현재 위치 값을 Map에 보내기
+        if segue.identifier == "toConfirmMap"{
+            if let destination = segue.destination as? ConfirmMapViewController {
+                //현재 위치 값을 Map에 보내기
            
                 destination.Mlatitude = Double(self.textLatitude.text!)!
                 destination.Mlongitude = Double(self.textLongitude.text!)!
                 
             }
             
+        }
 
     }
     

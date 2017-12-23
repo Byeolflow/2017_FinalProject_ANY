@@ -170,20 +170,20 @@ class AddDetailLocalViewController: UIViewController, UITextFieldDelegate, UITex
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "toAddedMap"{
+            if let destination = segue.destination as? MapForAddedViewController {
+                //현재 위치 값을 Map에 보내기
+                    if toggle.isOn == true {
+                        destination.Mlatitude = Double(self.latitude.text!)!
+                        destination.Mlongitude = Double(self.longitude.text!)!
         
-        if let destination = segue.destination as? MapForAddedViewController {
-            //현재 위치 값을 Map에 보내기
-                if toggle.isOn == true {
-                    destination.Mlatitude = Double(self.latitude.text!)!
-                    destination.Mlongitude = Double(self.longitude.text!)!
-        
-                }
-                else {
-                    //서울여자대학교 위치, 기본
-                    destination.Mlatitude = 37.628375
-                    destination.Mlongitude = 127.090718
-                }
-            
+                    }
+                    else {
+                        //서울여자대학교 위치, 기본
+                        destination.Mlatitude = 37.628375
+                        destination.Mlongitude = 127.090718
+                    }
+            }
             
         }
         
